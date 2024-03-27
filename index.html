@@ -9,23 +9,31 @@
                 color:white;
             }
         </style>
-
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <title>LOL 메인화면</title>
+        <title>연뮤 사이트 메인화면</title>
         <meta name = "전예주" content = "20231024">
         <meta name = "keywords" content="computer">
         <base href="http://127.0.0.1:5500">
-        
-
+        <script type = "text/javascript" src = "js/Baisc_js_test.js" defer></script>
     </head>
 
     <body style="background-color: black;">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">홈페이지 테스트</a>
+
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="image/LOGO.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                  </a>
+                </div>
+              </nav>
+
+              <a class="navbar-brand" href="#">연뮤 사이트</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -35,57 +43,72 @@
                     <a class="nav-link active" aria-current="page" href="#">메인페이지</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">기본정보</a>
+                    <a class="nav-link" href="#">정보</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">챔피언</a>
+                    <a class="nav-link" href="#">장비 대여</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">패치노트</a>
+                    <a class="nav-link" href="#">일정</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">새소식</a>
+                    <a class="nav-link" href="#">이벤트</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      고객지원
+                      예매처
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">게임다운로드</a></li>
-                      <li><a class="dropdown-item" href="#">롤커뮤니티</a></li>
-                      <li><a class="dropdown-item" href="#">깃 허브 페이지</a></li>
+                      <li><a class="dropdown-item" href="https://tickets.interpark.com/">인터파크 티켓</a></li>
+                      <li><a class="dropdown-item" href="https://www.ticketlink.co.kr/home">티켓링크</a></li>
+                      <li><a class="dropdown-item" href="http://ticket.yes24.com/">예스24 티켓</a></li>
+                      <li><a class="dropdown-item" href="https://ticket.wemakeprice.com/">위메프 티켓</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" id="search_btn" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
             </div>
           </nav>
 
         <div style="display: flex; justify-content: center;">
-            <img src="image/LOGO.png" width="60" height = "60">
-            <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white"> <a href = "https://www.leagueoflegends.com/ko-kr/how-to-play/" target="_blank"> 기본정보</a>   챔피언   패치 노트   새소식 등 (메뉴 정보 입력하기)</h3>
-        </div>
-        <hr>
-        <div style="display: flex; justify-content: center;">
-        <a href="index.html" target = "blank"><img src= "image/Main.jpg" width="1200" height = "768"> </a>
+        <a href="index.html" target = "blank"><img src= "image/Main2.jpg" class="img-fluid" width="1200" height = "900"> </a>
     </div>
     <div style="display: flex; justify-content: center;">
-        <table border="1">
-            <caption>인기캐릭터</caption>
+        <table class="table" border="1">
+            <caption>인기 캐릭터</caption>
             <tbody>
-                <tr bgcolor ="red">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+              </tr>
+                <tr class="table-success">
+                    <td><b>1</b></td>
                     <td>티모</td>
                     <td>꿀벌 티모</td>
                     <td>행복한 엘프 티모</td>
                     <td>행복한 엘프 티모2</td>
                     <td>행복한 엘프 티모3</td>
                 </tr>
-                <tr bgcolor ="grey">
+                <tr class="table-primary">
+                    <td><b>2</b></td>
                     <td colspan="5"><a href = "https://www.leagueoflegends.com/ko-kr/champions/teemo/" target="_blank"> 티모 프로필 접속하기</a></td>
 
                 </tr>
-                <tr>
-                    <td bgcolor ="blue"><b>정찰대 티모</b></td>
+                <tr class="table-warning">
+                    <td><b>3</b></td>
+                    <td ><b>정찰대 티모</b></td>
                     <td>판다 티모</td>
                     <td>판다 티모2</td>
                     <td colspan ="2"><font size "13"><img src="image/TM.jpg" width="60" height = "60">우주 그루브티모1 우주 그루브티모2</font></td>
