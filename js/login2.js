@@ -38,48 +38,12 @@ addJavascript('/js/security.js'); // 암복호화 함수
 addJavascript('/js/session.js'); // 세션 함수
 addJavascript('/js/cookie.js'); // 쿠키 함수
 
-function encodeByAES256(key, data){
-    const cipher = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
-        iv: CryptoJS.enc.Utf8.parse(""),
-        padding: CryptoJS.pad.Pkcs7,
-        mode: CryptoJS.mode.CBC
-    });
-    return cipher.toString();
-    }
-
-    function decodeByAES256(key, data){
-        const cipher = CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(key), {
-            iv: CryptoJS.enc.Utf8.parse(""),
-            padding: CryptoJS.pad.Pkcs7,
-            mode: CryptoJS.mode.CBC
-        });
-    return cipher.toString(CryptoJS.enc.Utf8);
-    }
-
-    function encrypt_text(password){
-        const k = "key"; // 클라이언트 키
-        const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
-        const b = password;
-        const eb = this.encodeByAES256(rk, b);
-        return eb;
-        console.log(eb);
-    }
-    function decrypt_text(){
-        const k = "key"; // 서버의 키
-        const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
-        const eb = session_get();
-        const b = this.decodeByAES256(rk, eb);
-        console.log(b);
-    } 
-
 const check_input = () => {
     const loginForm = document.getElementById('login_form');
     const loginBtn = document.getElementById('login_btn');
     const emailInput = document.getElementById('typeEmailX');
     const passwordInput = document.getElementById('typePasswordX');
     const idsave_check = document.getElementById('idSaveCheck');
-    const c = '아이디, 패스워드를 체크합니다';
-    alert(c);
     const emailValue = emailInput.value.trim();
     const passwordValue = passwordInput.value.trim();
 
@@ -143,5 +107,16 @@ const check_input = () => {
     session_set();
     loginForm.submit();
 };
-   
-document.getElementById('login_btn').addEventListener('click', check_input);
+
+function session_del() {//세션 삭제
+    if (sessionStorage) {
+        sessionStorage.removeItem("Session_Storage_test");
+        alert('로그아웃 버튼 클릭 확인 : 세션 스토리지를 삭제합니다.');
+    } 
+    else {
+        alert("세션 스토리지 지원 x");
+    }
+    }
+  
+
+document.getElementById('logout_btn').addEventListener('click', check_input);
